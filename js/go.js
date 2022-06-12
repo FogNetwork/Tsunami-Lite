@@ -8,7 +8,7 @@ window.navigator.serviceWorker.register('./uv.js', {scope: "." + __uv$config.pre
 
 var Stomp = new StompBoot({
   bare_server: "https://uv.holy.how/",
-  directory: "/stomp/",
+  directory: "./stomp/",
   loglevel: StompBoot.LOG_ERROR,
   codec: StompBoot.CODEC_XOR
 })
