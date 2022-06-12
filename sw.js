@@ -1,6 +1,6 @@
 var cacheName = 'tsunami';
 var filesToCache = [
-  '/sw.js'
+  './sw.js'
 ];
 
 self.addEventListener('install', function(e) {
