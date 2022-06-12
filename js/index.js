@@ -133,7 +133,7 @@ if (css !== null) {
 }
 
 if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register(window.location.origin + "/sw.js");
+  navigator.serviceWorker.register("./sw.js");
 }
 
 function getLogo(highlight = "#2493ff") {

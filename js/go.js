@@ -1,7 +1,3 @@
-var rhodiumproxy = window.location.protocol + "//" + window.location.hostname + "/rhodium/gateway?url="
-
-var corrosionproxy = window.location.protocol + "//" + window.location.hostname + "/corrosion/gateway?url="
-
 var ultravioletproxy = window.location.protocol + "//" + window.location.hostname + __uv$config.prefix
 
 var stompproxy = window.location.protocol + "//" + window.location.hostname
@@ -36,11 +32,7 @@ function searchurl(url) {
 
 function getproxy(url) {
 var currentproxy = localStorage.getItem("proxy")
-if (currentproxy == "Rhodium") {
-return rhodiumproxy + url
-} else if (currentproxy == "Corrosion") {
-return corrosionproxy + url
-} else if (currentproxy == "Ultraviolet") {
+if (currentproxy == "Ultraviolet") {
 return ultravioletproxy + __uv$config.encodeUrl(url)
 } else if (currentproxy == "Stomp") {
 return stompproxy + Stomp.html(StompSearch.query(url))
@@ -125,8 +117,6 @@ surf.contentWindow.location.reload()
 }
 
 var currentproxy = localStorage.getItem("proxy")
-var rhodium = document.getElementById("rhodium")
-var corrosion = document.getElementById("corrosion")
 var ultraviolet = document.getElementById("ultraviolet")
 var stomp = document.getElementById("stomp")
 
@@ -137,24 +127,10 @@ document.getElementById(currentproxy2).classList.add("proxysel")
 
 function setproxy(proxy) {
 localStorage.setItem("proxy", proxy)
-if (proxy == "Rhodium") {
-rhodium.classList.add("proxysel")
-corrosion.classList.remove("proxysel")
-ultraviolet.classList.remove("proxysel")
-stomp.classList.remove("proxysel")
-} else if (proxy == "Corrosion") {
-rhodium.classList.remove("proxysel")
-ultraviolet.classList.remove("proxysel")
-corrosion.classList.add("proxysel")
-stomp.classList.remove("proxysel")
-} else if (proxy == "Ultraviolet") {
-rhodium.classList.remove("proxysel")
-corrosion.classList.remove("proxysel")
+if (proxy == "Ultraviolet") {
 ultraviolet.classList.add("proxysel")
 stomp.classList.remove("proxysel")
 } else if (proxy == "Stomp") {
-rhodium.classList.remove("proxysel")
-corrosion.classList.remove("proxysel")
 ultraviolet.classList.remove("proxysel")
 stomp.classList.add("proxysel")
 }
