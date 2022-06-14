@@ -1,4 +1,7 @@
 ## Still a WIP
+An easy to host Tsunami on chromebooks, github pages or another host like netlify
+
+Proxies and omnibox and tab cloaking don't work yet
 
 <div align="center">
 
