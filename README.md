@@ -1,3 +1,6 @@
+# Deprecated!
+This project is deprecated! I am no longer maintaining this project. Why not check out [Metallic](https://github.com/Metallic-Web/Metallic)?
+
 ## Still a WIP
 An easy to host Tsunami on chromebooks, github pages or another host like netlify
 
